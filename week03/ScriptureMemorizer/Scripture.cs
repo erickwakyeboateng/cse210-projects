@@ -1,44 +1,41 @@
-using System;
-using System.Collections.Generic;
-
 public class Scripture
 {
-    private Reference reference;
-    private List<Word> words;
-    private static Random rand = new Random();
+    private Reference _reference;
+    private List<Word> _words;
+    private static Random _rand = new Random();
 
     public Scripture(Reference reference, string text)
     {
-        this.reference = reference;
-        words = new List<Word>();
+        _reference = reference;
+        _words = new List<Word>();
 
         string[] wordArray = text.Split(' ');
 
         foreach (string w in wordArray)
         {
-            words.Add(new Word(w));
+            _words.Add(new Word(w));
         }
     }
 
     public void Display()
     {
-        Console.WriteLine(reference.GetReferenceString());
+        Console.WriteLine(_reference.GetReferenceString());
 
-        foreach (Word word in words)
+        foreach (Word word in _words)
         {
             Console.Write(word.Display() + " ");
         }
 
         Console.WriteLine("\n");
 
-        Console.WriteLine("Progress: " + GetHiddenCount() + "/" + words.Count + " words hidden");
+        Console.WriteLine("Progress: " + GetHiddenCount() + "/" + _words.Count + " words hidden");
     }
 
     public void HideRandomWords(int count)
     {
         List<Word> visibleWords = new List<Word>();
 
-        foreach (Word word in words)
+        foreach (Word word in _words)
         {
             if (!word.IsHidden())
             {
@@ -50,7 +47,7 @@ public class Scripture
 
         while (hidden < count && visibleWords.Count > 0)
         {
-            int index = rand.Next(visibleWords.Count);
+            int index = _rand.Next(visibleWords.Count);
             visibleWords[index].Hide();
             visibleWords.RemoveAt(index);
             hidden++;
@@ -59,7 +56,7 @@ public class Scripture
 
     public bool IsFullyHidden()
     {
-        foreach (Word word in words)
+        foreach (Word word in _words)
         {
             if (!word.IsHidden())
             {
@@ -73,7 +70,7 @@ public class Scripture
     {
         int count = 0;
 
-        foreach (Word word in words)
+        foreach (Word word in _words)
         {
             if (word.IsHidden())
             {

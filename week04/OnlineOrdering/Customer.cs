@@ -1,26 +1,26 @@
 public class Customer
 {
-    private string name;
-    private Address address;
+    private string _name;
+    private Address _address;
 
     public Customer(string name, Address address)
     {
-        this.name = name;
-        this.address = address;
+        _name = name;
+        _address = address;
     }
 
     public bool livesInUSA()
     {
-        return address.isInUSA();
+        return _address.isInUSA();
     }
 
     public string getName()
     {
-        return name;
+        return _name;
     }
 
     public string getAddress()
     {
-        return address.getAddress();
+        return _address.getAddress();
     }
 }

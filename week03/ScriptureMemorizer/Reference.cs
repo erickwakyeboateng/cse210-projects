@@ -1,37 +1,37 @@
 public class Reference
 {
-    private string book;
-    private int chapter;
-    private int verseStart;
-    private int verseEnd;
-    private bool hasRange;
+    private string _book;
+    private int _chapter;
+    private int _verseStart;
+    private int _verseEnd;
+    private bool _hasRange;
 
     public Reference(string book, int chapter, int verse)
     {
-        this.book = book;
-        this.chapter = chapter;
-        this.verseStart = verse;
-        this.hasRange = false;
+        _book = book;
+        _chapter = chapter;
+        _verseStart = verse;
+        _hasRange = false;
     }
 
     public Reference(string book, int chapter, int verseStart, int verseEnd)
     {
-        this.book = book;
-        this.chapter = chapter;
-        this.verseStart = verseStart;
-        this.verseEnd = verseEnd;
-        this.hasRange = true;
+        _book = book;
+        _chapter = chapter;
+        _verseStart = verseStart;
+        _verseEnd = verseEnd;
+        _hasRange = true;
     }
 
     public string GetReferenceString()
     {
-        if (hasRange)
+        if (_hasRange)
         {
-            return book + " " + chapter + ":" + verseStart + "-" + verseEnd;
+            return _book + " " + _chapter + ":" + _verseStart + "-" + _verseEnd;
         }
         else
         {
-            return book + " " + chapter + ":" + verseStart;
+            return _book + " " + _chapter + ":" + _verseStart;
         }
     }
 }

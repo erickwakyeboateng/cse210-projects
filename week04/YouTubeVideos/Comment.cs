@@ -1,11 +1,21 @@
 public class Comment
 {
-    public string name;
-    public string text;
+    private string _name;
+    private string _text;
 
     public Comment(string name, string text)
     {
-        this.name = name;
-        this.text = text;
+        _name = name;
+        _text = text;
+    }
+
+    public string getName()
+    {
+        return _name;
+    }
+
+    public string getText()
+    {
+        return _text;
     }
 }

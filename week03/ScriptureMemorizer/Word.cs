@@ -1,31 +1,31 @@
 public class Word
 {
-    private string text;
-    private bool hidden;
+    private string _text;
+    private bool _hidden;
 
     public Word(string text)
     {
-        this.text = text;
-        hidden = false;
+        _text = text;
+        _hidden = false;
     }
 
     public void Hide()
     {
-        hidden = true;
+        _hidden = true;
     }
 
     public bool IsHidden()
     {
-        return hidden;
+        return _hidden;
     }
 
     public string Display()
     {
-        if (hidden)
+        if (_hidden)
         {
             string result = "";
 
-            foreach (char c in text)
+            foreach (char c in _text)
             {
                 if (char.IsLetter(c))
                 {
@@ -41,7 +41,7 @@ public class Word
         }
         else
         {
-            return text;
+            return _text;
         }
     }
 }

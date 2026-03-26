@@ -2,29 +2,29 @@ using System.Collections.Generic;
 
 public class Order
 {
-    private List<Product> products = new List<Product>();
-    private Customer customer;
+    private List<Product> _products = new List<Product>();
+    private Customer _customer;
 
     public Order(Customer customer)
     {
-        this.customer = customer;
+        _customer = customer;
     }
 
     public void addProduct(Product product)
     {
-        products.Add(product);
+        _products.Add(product);
     }
 
     public double getTotalCost()
     {
         double total = 0;
 
-        foreach (Product p in products)
+        foreach (Product p in _products)
         {
             total += p.getTotalCost();
         }
 
-        if (customer.livesInUSA())
+        if (_customer.livesInUSA())
         {
             total += 5;
         }
@@ -40,7 +40,7 @@ public class Order
     {
         string result = "Packing Label:\n";
 
-        foreach (Product p in products)
+        foreach (Product p in _products)
         {
             result += p.getProductInfo() + "\n";
         }
@@ -50,6 +50,6 @@ public class Order
 
     public string getShippingLabel()
     {
-        return "Shipping Label:\n" + customer.getName() + "\n" + customer.getAddress();
+        return "Shipping Label:\n" + _customer.getName() + "\n" + _customer.getAddress();
     }
 }
