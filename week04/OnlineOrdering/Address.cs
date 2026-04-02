@@ -13,12 +13,12 @@ public class Address
         _country = country;
     }
 
-    public bool isInUSA()
+    public bool IsInUSA()
     {
         return _country == "USA";
     }
 
-    public string getAddress()
+    public string GetAddress()
     {
         return _street + "\n" + _city + ", " + _state + "\n" + _country;
     }

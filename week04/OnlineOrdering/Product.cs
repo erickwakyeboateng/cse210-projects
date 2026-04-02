@@ -13,12 +13,12 @@ public class Product
         _quantity = quantity;
     }
 
-    public double getTotalCost()
+    public double GetTotalCost()
     {
         return _price * _quantity;
     }
 
-    public string getProductInfo()
+    public string GetProductInfo()
     {
         return _name + " - " + _productId;
     }

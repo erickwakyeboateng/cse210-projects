@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 class Program
 {
     static void Main(string[] args)
@@ -28,14 +27,14 @@ class Program
 
       foreach (Video video in videos)
 {
-    Console.WriteLine("Title: " + video.getTitle());
-    Console.WriteLine("Author: " + video.getAuthor());
-    Console.WriteLine("Length: " + video.getLength() + " seconds");
-    Console.WriteLine("Comments: " + video.getCommentCount());
+    Console.WriteLine("Title: " + video.GetTitle());
+    Console.WriteLine("Author: " + video.GetAuthor());
+    Console.WriteLine("Length: " + video.GetLength() + " seconds");
+    Console.WriteLine("Comments: " + video.GetCommentCount());
 
-    foreach (Comment comment in video.getComments())
+    foreach (Comment comment in video.GetComments())
     {
-        Console.WriteLine("- " + comment.getName() + ": " + comment.getText());
+        Console.WriteLine("- " + comment.GetName() + ": " + comment.GetText());
     }
 
     Console.WriteLine();

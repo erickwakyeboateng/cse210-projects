@@ -10,21 +10,21 @@ public class Order
         _customer = customer;
     }
 
-    public void addProduct(Product product)
+    public void AddProduct(Product product)
     {
         _products.Add(product);
     }
 
-    public double getTotalCost()
+    public double GetTotalCost()
     {
         double total = 0;
 
         foreach (Product p in _products)
         {
-            total += p.getTotalCost();
+            total += p.GetTotalCost();
         }
 
-        if (_customer.livesInUSA())
+        if (_customer.LivesInUSA())
         {
             total += 5;
         }
@@ -36,20 +36,20 @@ public class Order
         return total;
     }
 
-    public string getPackingLabel()
+    public string GetPackingLabel()
     {
         string result = "Packing Label:\n";
 
         foreach (Product p in _products)
         {
-            result += p.getProductInfo() + "\n";
+            result += p.GetProductInfo() + "\n";
         }
 
         return result;
     }
 
-    public string getShippingLabel()
+    public string GetShippingLabel()
     {
-        return "Shipping Label:\n" + _customer.getName() + "\n" + _customer.getAddress();
+        return "Shipping Label:\n" + _customer.getName() + "\n" + _customer.GetAddress();
     }
 }

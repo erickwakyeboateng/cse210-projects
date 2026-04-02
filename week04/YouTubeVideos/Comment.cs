@@ -9,12 +9,12 @@ public class Comment
         _text = text;
     }
 
-    public string getName()
+    public string GetName()
     {
         return _name;
     }
 
-    public string getText()
+    public string GetText()
     {
         return _text;
     }

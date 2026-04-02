@@ -9,9 +9,9 @@ public class Customer
         _address = address;
     }
 
-    public bool livesInUSA()
+    public bool LivesInUSA()
     {
-        return _address.isInUSA();
+        return _address.IsInUSA();
     }
 
     public string getName()
@@ -19,8 +19,8 @@ public class Customer
         return _name;
     }
 
-    public string getAddress()
+    public string GetAddress()
     {
-        return _address.getAddress();
+        return _address.GetAddress();
     }
 }
