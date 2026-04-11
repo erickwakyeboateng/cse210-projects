@@ -25,19 +25,19 @@ class Program
         videos.Add(v2);
         videos.Add(v3);
 
-      foreach (Video video in videos)
-{
-    Console.WriteLine("Title: " + video.GetTitle());
-    Console.WriteLine("Author: " + video.GetAuthor());
-    Console.WriteLine("Length: " + video.GetLength() + " seconds");
-    Console.WriteLine("Comments: " + video.GetCommentCount());
+        foreach (Video video in videos)
+        {
+            Console.WriteLine("Title: " + video.GetTitle());
+            Console.WriteLine("Author: " + video.GetAuthor());
+            Console.WriteLine("Length: " + video.GetLength() + " seconds");
+            Console.WriteLine("Comments: " + video.GetCommentCount());
 
-    foreach (Comment comment in video.GetComments())
-    {
-        Console.WriteLine("- " + comment.GetName() + ": " + comment.GetText());
-    }
+            foreach (Comment comment in video.GetComments())
+            {
+                Console.WriteLine("- " + comment.GetName() + ": " + comment.GetText());
+            }
 
-    Console.WriteLine();
-}
+            Console.WriteLine();
+        }
     }
 }
